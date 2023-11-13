@@ -1,13 +1,19 @@
-import './App.css'
+import "./App.css";
 
 function App() {
- 
   return (
-    <>
-    <TodoCounter/>
-     <div>Hola Mundo</div>
-    </>
-  )
+    <div>
+      <div>Hola Mundo</div>
+      <TodoCounter />
+      <TodoSearch/>
+      <TodoList>
+        <TodoItem/>
+        <TodoItem/>
+        <TodoItem/>
+      </TodoList>
+      <CreateTodoButton/>
+    </div>
+  );
 }
 
-export default App
+export default App;
