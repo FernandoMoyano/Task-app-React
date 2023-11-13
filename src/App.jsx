@@ -1,5 +1,6 @@
 import "./App.css";
 import { TodoCounter } from "./components/TodoCounter";
+import TodoSearch from "./components/TodoSearch";
 
 
 function App() {
@@ -20,4 +21,4 @@ function App() {
 
 export default App;
 
-function TodoSearch() {}
+
