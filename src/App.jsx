@@ -1,9 +1,9 @@
-import "./App.css";
+import "./index.css";
 import CreateTodoButton from "./components/CreateTodoButton/CreateTodoButton";
 import { TodoCounter } from "./components/TodoCounter/TodoCounter";
 import TodoItem from "./components/TodoItem/TodoItem";
 import TodoList from "./components/TodoList/TodoList";
-import TodoSearch from "./components/TodoSearch";
+import TodoSearch from "./components/TodoSearch/TodoSearch";
 
 const dafaultTodos = [
   {
