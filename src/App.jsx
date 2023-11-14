@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <div>Hola Mundo</div>
-      <TodoCounter />
+      <TodoCounter completed={16} total={30} />
       <TodoSearch />
       <TodoList>
         <TodoItem />

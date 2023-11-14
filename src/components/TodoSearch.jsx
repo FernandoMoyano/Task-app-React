@@ -1,9 +1,7 @@
 const TodoSearch = () => {
-  return (
-    <div>
-      <input placeholder="Hacer tarea">Hacer tarea</input>
-    </div>
-  );
+  return(
+    <input placeholder="Hacer tarea" value="Hacer Tarea" />
+  ) 
 };
 
 export default TodoSearch;
