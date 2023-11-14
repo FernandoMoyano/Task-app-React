@@ -1,7 +1,8 @@
+import "./TodoList.css"
 /* eslint-disable react/prop-types */
 const TodoList = (props) => {
   return (
-    <ul>
+    <ul className="todoList">
       {props.children}
     </ul>
   );
