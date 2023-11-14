@@ -1,10 +1,11 @@
-const TodoItem = () => {
+/* eslint-disable react/prop-types */
+const TodoItem = (props) => {
   return (
     <div>
       <li>
-        <span>V</span>
-        <p>fgdefgdfgd</p>
-        <span>X</span>
+        <span>✅{props.completed}</span>
+        <p>{props.text}</p>
+        <span>❌</span>
       </li>
     </div>
   );
