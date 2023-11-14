@@ -1,8 +1,8 @@
 import "./App.css";
-import CreateTodoButton from "./components/CreateTodoButton";
-import { TodoCounter } from "./components/TodoCounter";
-import TodoItem from "./components/TodoItem";
-import TodoList from "./components/TodoList";
+import CreateTodoButton from "./components/CreateTodoButton/CreateTodoButton";
+import { TodoCounter } from "./components/TodoCounter/TodoCounter";
+import TodoItem from "./components/TodoItem/TodoItem";
+import TodoList from "./components/TodoList/TodoList";
 import TodoSearch from "./components/TodoSearch";
 
 const dafaultTodos = [
@@ -20,16 +20,15 @@ const dafaultTodos = [
 function App() {
   return (
     <div>
-      <div>Hola Mundo</div>
       <TodoCounter completed={16} total={30} />
       <TodoSearch />
       <TodoList>
         {dafaultTodos.map((todo) => (
           <TodoItem
-           key={todo.text} 
-           text={todo.text}
-           completed={todo.completed}            
-           />
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+          />
         ))}
       </TodoList>
       <CreateTodoButton />
