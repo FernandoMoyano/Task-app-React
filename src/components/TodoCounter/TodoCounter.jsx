@@ -1,3 +1,4 @@
+import "./TodoCounter.css"
 // eslint-disable-next-line react/prop-types
 function TodoCounter({ total, completed }) {
   return (
