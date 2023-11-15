@@ -9,6 +9,8 @@
 }
 
 .todoItem-p {
+  display: flex;
+  align-items: center;
   margin: 24px 0 24px 24px;
   width: calc(100% - 120px);
   font-size: 18px;
@@ -24,11 +26,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   font-size: 24px;
   font-weight: bold;
-  /* background-color: #CCC; */
+ 
 }
 
 .icon-check {
@@ -41,8 +43,7 @@
 
 .icon-delete {
   position: absolute;
-  top: -24px;
-  right: 0;
+  right: 12px;
 }
 .icon-delete:hover {
   color: red;
