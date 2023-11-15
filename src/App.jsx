@@ -43,23 +43,15 @@ function App() {
   const handleComplete = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text == text);
-    newTodos[todoIndex].completed = true;
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
     setTodos(newTodos);
   };
 
   return (
     <div>
-      <TodoCounter 
-        completed={completedTodos} 
-        total={totalTodos} 
+      <TodoCounter completed={completedTodos} total={totalTodos} />
 
-        />
-
-      <TodoSearch 
-        searchValue={searchValue} 
-        setSearchValue={setSearchValue} 
-
-      />
+      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 
       <TodoList>
         {searchedTodos.map((todo) => (
