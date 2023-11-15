@@ -7,6 +7,7 @@ const TodoItem = (props) => {
         <span
           className={`icon icon-check 
         ${props.completed && "icon-check--active"}`}
+        onClick={props.handleComplete}
         >
           V{props.completed}
         </span>
