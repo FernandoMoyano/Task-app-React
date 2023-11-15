@@ -8,7 +8,7 @@ import { useState } from "react";
 
 const dafaultTodos = [
   {
-    text: "Leer Libro",
+    text: "Leer Libro de ciencia",
     completed: false,
   },
 
@@ -21,9 +21,14 @@ const dafaultTodos = [
 function App() {
   const [todos, setTodos] = useState(dafaultTodos);
   const [searchValue, setSearchValue] = useState("");
-
-  const completedTodos=todos.filter(todo=>todo.completed).length;
+  /* Estados derivados */
+  const completedTodos=todos.filter(
+    todo => todo.completed).length;
+    
   const totalTodos=todos.length;
+
+  const searchedTodos=todos.filter(
+    todo => todo.text.includes(searchValue))
 
   return (
     <div>
