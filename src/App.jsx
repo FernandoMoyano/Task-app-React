@@ -19,27 +19,33 @@ const dafaultTodos = [
 ];
 
 function App() {
+  const [todos, setTodos] = useState(dafaultTodos);
   const [searchValue, setSearchValue] = useState("");
+
+  const completedTodos=todos.filter(todo=>todo.completed).length;
+  const totalTodos=todos.length;
+
   return (
     <div>
       <TodoCounter 
-        completed={16} 
-        total={30} 
-
+        completed={completedTodos} 
+        total={totalTodos} 
       />
+
       <TodoSearch 
         searchValue={searchValue} 
         setSearchValue={setSearchValue} 
-
       />
+      
       <TodoList>
         {dafaultTodos.map((todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
-          />
+      />
         ))}
+
       </TodoList>
       <CreateTodoButton />
     </div>
