@@ -39,11 +39,19 @@ function App() {
     return todoText.includes(searchText);
   });
 
-  /* Marcar tarea como completada */
+  /* Marcar o desmarcar tarea como completada */
   const handleComplete = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text == text);
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
+    setTodos(newTodos);
+  };
+
+  /* Eliminar tarea */
+  const handleDelete = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex((todo) => todo.text == text);
+    delete newTodos[todoIndex]
     setTodos(newTodos);
   };
 
@@ -60,6 +68,7 @@ function App() {
             text={todo.text}
             completed={todo.completed}
             onComplete={() => handleComplete(todo.text)}
+            onDelete={()=>handleDelete(todo.text)}
           />
         ))}
       </TodoList>
