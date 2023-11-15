@@ -51,15 +51,23 @@ function App() {
   const handleDelete = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text == text);
-    delete newTodos[todoIndex]
+    newTodos.splice(todoIndex, 1);
     setTodos(newTodos);
   };
 
   return (
     <div>
-      <TodoCounter completed={completedTodos} total={totalTodos} />
+      <TodoCounter
+        completed={completedTodos} 
+        total={totalTodos} 
+          
+        />
 
-      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
+      <TodoSearch 
+        searchValue={searchValue} 
+        setSearchValue={setSearchValue} 
+
+        />
 
       <TodoList>
         {searchedTodos.map((todo) => (
@@ -68,7 +76,7 @@ function App() {
             text={todo.text}
             completed={todo.completed}
             onComplete={() => handleComplete(todo.text)}
-            onDelete={()=>handleDelete(todo.text)}
+            onDelete={() => handleDelete(todo.text)}
           />
         ))}
       </TodoList>
