@@ -6,7 +6,7 @@ import TodoList from "./components/TodoList/TodoList";
 import TodoSearch from "./components/TodoSearch/TodoSearch";
 import { useState } from "react";
 
-const dafaultTodos = [
+/* const dafaultTodos = [
   {
     text: "Leer Libro de ciencia",
     completed: false,
@@ -20,11 +20,20 @@ const dafaultTodos = [
     text: "Revisar correo",
     completed: true,
   },
-];
+]; */
 
 function App() {
+  const localStorageTodos = localStorage.getItem("TODOS_V1");
+  let parseTodos;
+  if (!localStorageTodos) {
+    localStorage.setItem("TODOS_V1", JSON.stringify([]));
+    parseTodos = [];
+  } else {
+    parseTodos = JSON.parse(localStorageTodos);
+  }
+
   /* Estados */
-  const [todos, setTodos] = useState(dafaultTodos);
+  const [todos, setTodos] = useState(parseTodos);
   const [searchValue, setSearchValue] = useState("");
 
   /* Estados derivados de todos */
@@ -57,17 +66,17 @@ function App() {
 
   return (
     <div>
-      <TodoCounter
+      <TodoCounter 
         completed={completedTodos} 
         total={totalTodos} 
-          
-        />
+
+      />
 
       <TodoSearch 
         searchValue={searchValue} 
         setSearchValue={setSearchValue} 
 
-        />
+      />
 
       <TodoList>
         {searchedTodos.map((todo) => (
