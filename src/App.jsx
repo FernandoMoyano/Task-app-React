@@ -20,9 +20,12 @@ import { useState } from "react";
     text: "Revisar correo",
     completed: true,
   },
-]; */
+];
+
+localStorage.setItem("TODOS_V1", JSON.stringify(dafaultTodos)); */
 
 function App() {
+  /* Local storage */
   const localStorageTodos = localStorage.getItem("TODOS_V1");
   let parseTodos;
   if (!localStorageTodos) {
@@ -48,11 +51,13 @@ function App() {
     return todoText.includes(searchText);
   });
 
+
   /* Marcar o desmarcar tarea como completada */
   const handleComplete = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text == text);
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
+    localStorage.setItem("TODOS_V1", JSON.stringify(newTodos));
     setTodos(newTodos);
   };
 
@@ -61,6 +66,7 @@ function App() {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text == text);
     newTodos.splice(todoIndex, 1);
+    localStorage.setItem("TODOS_V1", JSON.stringify(newTodos));
     setTodos(newTodos);
   };
 
