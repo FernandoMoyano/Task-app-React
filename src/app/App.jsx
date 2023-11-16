@@ -1,11 +1,11 @@
-import "./index.css";
-import CreateTodoButton from "./components/CreateTodoButton/CreateTodoButton";
-import { TodoCounter } from "./components/TodoCounter/TodoCounter";
-import TodoItem from "./components/TodoItem/TodoItem";
-import TodoList from "./components/TodoList/TodoList";
-import TodoSearch from "./components/TodoSearch/TodoSearch";
+import "../styles/index.css";
+import CreateTodoButton from "../components/CreateTodoButton/CreateTodoButton";
+import { TodoCounter } from "../components/TodoCounter/TodoCounter";
+import TodoItem from "../components/TodoItem/TodoItem";
+import TodoList from "../components/TodoList/TodoList";
+import TodoSearch from "../components/TodoSearch/TodoSearch";
 import { useState } from "react";
-import useLocalStorage from "./components/Hooks/useLocalStorage";
+import useLocalStorage from "../Hooks/useLocalStorage";
 
 /* const dafaultTodos = [
   {
@@ -47,7 +47,7 @@ function App() {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text == text);
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
-
+    /* Guardamos cambios en localStorage */
     saveTodos(newTodos);
   };
 
@@ -56,7 +56,7 @@ function App() {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text == text);
     newTodos.splice(todoIndex, 1);
-
+    /* Guardamos cambios en localStorage */
     saveTodos(newTodos);
   };
 
