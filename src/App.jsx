@@ -5,6 +5,7 @@ import TodoItem from "./components/TodoItem/TodoItem";
 import TodoList from "./components/TodoList/TodoList";
 import TodoSearch from "./components/TodoSearch/TodoSearch";
 import { useState } from "react";
+import useLocalStorage from "./components/Hooks/useLocalStorage";
 
 /* const dafaultTodos = [
   {
@@ -25,18 +26,8 @@ import { useState } from "react";
 localStorage.setItem("TODOS_V1", JSON.stringify(dafaultTodos)); */
 
 function App() {
-  /* Local storage */
-  const localStorageTodos = localStorage.getItem("TODOS_V1");
-  let parseTodos;
-  if (!localStorageTodos) {
-    localStorage.setItem("TODOS_V1", JSON.stringify([]));
-    parseTodos = [];
-  } else {
-    parseTodos = JSON.parse(localStorageTodos);
-  }
-
   /* Estados */
-  const [todos, setTodos] = useState(parseTodos);
+  const [todos, saveTodos] = useLocalStorage("TODOS_V1", []);
   const [searchValue, setSearchValue] = useState("");
 
   /* Estados derivados de todos */
@@ -51,14 +42,13 @@ function App() {
     return todoText.includes(searchText);
   });
 
-
   /* Marcar o desmarcar tarea como completada */
   const handleComplete = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text == text);
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
-    localStorage.setItem("TODOS_V1", JSON.stringify(newTodos));
-    setTodos(newTodos);
+
+    saveTodos(newTodos);
   };
 
   /* Eliminar tarea */
@@ -66,23 +56,15 @@ function App() {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text == text);
     newTodos.splice(todoIndex, 1);
-    localStorage.setItem("TODOS_V1", JSON.stringify(newTodos));
-    setTodos(newTodos);
+
+    saveTodos(newTodos);
   };
 
   return (
     <div>
-      <TodoCounter 
-        completed={completedTodos} 
-        total={totalTodos} 
+      <TodoCounter completed={completedTodos} total={totalTodos} />
 
-      />
-
-      <TodoSearch 
-        searchValue={searchValue} 
-        setSearchValue={setSearchValue} 
-
-      />
+      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 
       <TodoList>
         {searchedTodos.map((todo) => (
