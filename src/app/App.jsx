@@ -1,11 +1,7 @@
 import "../styles/index.css";
-import CreateTodoButton from "../components/CreateTodoButton/CreateTodoButton";
-import { TodoCounter } from "../components/TodoCounter/TodoCounter";
-import TodoItem from "../components/TodoItem/TodoItem";
-import TodoList from "../components/TodoList/TodoList";
-import TodoSearch from "../components/TodoSearch/TodoSearch";
 import { useState } from "react";
 import useLocalStorage from "../Hooks/useLocalStorage";
+import AppUi from "../container/AppUi";
 
 /* const dafaultTodos = [
   {
@@ -61,24 +57,15 @@ function App() {
   };
 
   return (
-    <div>
-      <TodoCounter completed={completedTodos} total={totalTodos} />
-
-      <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
-
-      <TodoList>
-        {searchedTodos.map((todo) => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={() => handleComplete(todo.text)}
-            onDelete={() => handleDelete(todo.text)}
-          />
-        ))}
-      </TodoList>
-      <CreateTodoButton />
-    </div>
+    <AppUi
+      completedTodos={completedTodos}
+      totalTodos={totalTodos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedTodos={searchedTodos}
+      handleComplete={handleComplete}
+      handleDelete={handleDelete}
+    />
   );
 }
 
