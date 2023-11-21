@@ -1,8 +1,10 @@
-import "./TodosLoading.css"
+import "./TodosLoading.css";
 const TodosLoading = () => {
   return (
-    <p>Cargando...</p>
-  )
-}
+    <div className="container">
+      <span className="loader"></span>
+    </div>
+  );
+};
 
-export default TodosLoading
+export default TodosLoading;

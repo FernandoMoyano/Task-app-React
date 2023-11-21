@@ -1,7 +1,7 @@
 import "./EmptyTodos.css"
 const EmptyTodos = () => {
   return (
-    <div>EmptyTodos</div>
+    <p>Crea tu primer Todo</p>
   )
 }
 
