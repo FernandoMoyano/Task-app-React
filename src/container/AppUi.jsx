@@ -9,15 +9,15 @@ import TodosLoading from "../components/Todosloading/TodosLoading";
 
 
 const AppUi = ({
-  loading,
-  error,
-  completedTodos,
-  totalTodos,
-  searchValue,
-  setSearchValue,
-  searchedTodos,
-  handleComplete,
-  handleDelete,
+  // loading,
+  // error,
+  // completedTodos,
+  // totalTodos,
+  // searchValue,
+  // setSearchValue,
+  // searchedTodos,
+  // handleComplete,
+  // handleDelete,
 }) => {
   return (
     <div>
