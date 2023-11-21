@@ -4,6 +4,8 @@ import { TodoCounter } from "../components/TodoCounter/TodoCounter";
 import TodoItem from "../components/TodoItem/TodoItem";
 import TodoList from "../components/TodoList/TodoList";
 import TodoSearch from "../components/TodoSearch/TodoSearch";
+import TodosLoading from "../components/Todosloading/TodosLoading";
+
 
 const AppUi = ({
   loading,
@@ -23,7 +25,7 @@ const AppUi = ({
       <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 
       <TodoList>
-        {loading && <p>Estamos cargando...</p>}
+        {loading && <TodosLoading/>}
         {error && <p>Hubo un error</p>}
         {!loading && searchedTodos.length === 0 && <p>¡crea tu primer TODO!</p>}
         {searchedTodos.map((todo) => (
