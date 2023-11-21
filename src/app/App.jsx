@@ -23,7 +23,12 @@ localStorage.setItem("TODOS_V1", JSON.stringify(dafaultTodos)); */
 
 function App() {
   /* Estados */
-  const [todos, saveTodos] = useLocalStorage("TODOS_V1", []);
+  const {
+    item: todos,
+    saveItem: saveTodos,
+    loading,
+    error,
+  } = useLocalStorage("TODOS_V1", []);
   const [searchValue, setSearchValue] = useState("");
 
   /* Estados derivados de todos */
@@ -58,6 +63,8 @@ function App() {
 
   return (
     <AppUi
+      loading={loading}
+      error={error}
       completedTodos={completedTodos}
       totalTodos={totalTodos}
       searchValue={searchValue}
