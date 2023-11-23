@@ -43,7 +43,7 @@ const AppUi = () => {
         setOpenModal={setOpenModal}
        />
 
-      {openModal && <Modal>Funcion para agregar Todo</Modal>}
+      {openModal && (<Modal>Funcion para agregar Todo</Modal>)}
     </div>
   );
 };
