@@ -8,10 +8,18 @@ import TodoSearch from "../components/TodoSearch/TodoSearch";
 import TodosError from "../components/TodosError/TodosError";
 import TodosLoading from "../components/Todosloading/TodosLoading";
 import { TodoContext } from "../context/TodoContext";
+import Modal from "../components/Modal/Modal";
 
 const AppUi = () => {
-  const { loading, error, searchedTodos, handleComplete, handleDelete } =
-    useContext(TodoContext);
+  const {
+    loading,
+    error,
+    searchedTodos,
+    handleComplete,
+    handleDelete,
+    openModal,
+    setOpenModal,
+  } = useContext(TodoContext);
   return (
     <div>
       <TodoCounter />
@@ -31,8 +39,14 @@ const AppUi = () => {
           />
         ))}
       </TodoList>
-
       <CreateTodoButton />
+
+      {
+        openModal && 
+        <Modal>
+
+        </Modal>
+      }
     </div>
   );
 };

@@ -12,6 +12,7 @@ const TodoProvider = ({ children }) => {
     error,
   } = useLocalStorage("TODOS_V1", []);
   const [searchValue, setSearchValue] = useState("");
+  const [openModal, setOpenModal] = useState(false);
 
   /* Estados derivados de todos */
   const completedTodos = todos.filter((todo) => todo.completed).length;
@@ -54,6 +55,8 @@ const TodoProvider = ({ children }) => {
         searchedTodos,
         handleComplete,
         handleDelete,
+        openModal,
+        setOpenModal
       }}
     >
       {children}
