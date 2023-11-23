@@ -40,7 +40,7 @@ textarea:focus {
   outline-color: #61DAFA;
 }
 
-.TodoForm-buttonContainer {
+.todoForm-buttonContainer {
   margin-top: 14px;
   display: flex;
   justify-content: space-between;
@@ -48,7 +48,7 @@ textarea:focus {
   width: 100%;
 }
 
-.TodoForm-button {
+.todoForm-button {
   cursor: pointer;
   display: inline-block;
   font-size: 20px;
@@ -61,11 +61,11 @@ textarea:focus {
   font-family: 'Montserrat';
 }
 
-.TodoForm-button--add {
+.todoForm-button--add {
   background: #61DAFA;
   box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
 }
 
-.TodoForm-button--cancel {
+.todoForm-button--cancel {
   background: transparent;
 }
