@@ -9,6 +9,7 @@ import TodosError from "../components/TodosError/TodosError";
 import TodosLoading from "../components/Todosloading/TodosLoading";
 import { TodoContext } from "../context/TodoContext";
 import Modal from "../components/Modal/Modal";
+import TodoForm from "../components/TodoForm/TodoForm";
 
 const AppUi = () => {
   const {
@@ -43,7 +44,7 @@ const AppUi = () => {
         setOpenModal={setOpenModal}
        />
 
-      {openModal && (<Modal>Funcion para agregar Todo</Modal>)}
+      {openModal && (<Modal><TodoForm/></Modal>)}
     </div>
   );
 };
