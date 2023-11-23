@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import "./TodoSearch.css";
+import { TodoContext } from "../../context/TodoContext";
 // eslint-disable-next-line react/prop-types
-const TodoSearch = ({searchValue, setSearchValue}) => {
+const TodoSearch = () => {
+  const { searchValue, setSearchValue } = useContext(TodoContext);
   return (
     <>
       <input
