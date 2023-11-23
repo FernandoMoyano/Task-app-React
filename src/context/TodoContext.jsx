@@ -11,7 +11,9 @@ const TodoProvider = ({ children }) => {
     loading,
     error,
   } = useLocalStorage("TODOS_V1", []);
+  //Buscador
   const [searchValue, setSearchValue] = useState("");
+  //Modal
   const [openModal, setOpenModal] = useState(false);
 
   /* Estados derivados de todos */
@@ -43,6 +45,11 @@ const TodoProvider = ({ children }) => {
     /* Guardamos cambios en localStorage */
     saveTodos(newTodos);
   };
+
+  //Abrir o cerrar Modal
+  const handleModal = () => {
+    setOpenModal(!openModal);
+  };
   return (
     <TodoContext.Provider
       value={{
@@ -56,7 +63,8 @@ const TodoProvider = ({ children }) => {
         handleComplete,
         handleDelete,
         openModal,
-        setOpenModal
+        setOpenModal,
+        handleModal,
       }}
     >
       {children}

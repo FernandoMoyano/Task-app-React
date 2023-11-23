@@ -39,9 +39,11 @@ const AppUi = () => {
           />
         ))}
       </TodoList>
-      <CreateTodoButton />
+      <CreateTodoButton
+        setOpenModal={setOpenModal}
+       />
 
-      {openModal && <Modal></Modal>}
+      {openModal && <Modal>Funcion para agregar Todo</Modal>}
     </div>
   );
 };
