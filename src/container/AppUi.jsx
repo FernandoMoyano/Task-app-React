@@ -41,12 +41,7 @@ const AppUi = () => {
       </TodoList>
       <CreateTodoButton />
 
-      {
-        openModal && 
-        <Modal>
-
-        </Modal>
-      }
+      {openModal && <Modal></Modal>}
     </div>
   );
 };

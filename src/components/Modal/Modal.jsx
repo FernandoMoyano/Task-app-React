@@ -1,7 +1,10 @@
-const Modal = () => {
-  return (
-    <div>Modal</div>
-  )
-}
+import { ReactDOM } from "react";
 
-export default Modal
+const Modal = ({ children }) => {
+  return ReactDOM.createPortal(
+    <div className="Modal">{children}</div>,
+    document.getElementById("modal")
+  );
+};
+
+export default Modal;
