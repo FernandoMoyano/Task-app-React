@@ -2,18 +2,19 @@ import { useContext, useState } from "react";
 import "./TodoForm.css";
 import { TodoContext } from "../../context/TodoContext";
 const TodoForm = () => {
-  const { setOpenModal } = useContext(TodoContext);
+  const { addTodo, setOpenModal } = useContext(TodoContext);
   const [newTodoValue, setNewTodoValue] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    addTodo(newTodoValue);
     setOpenModal(false);
   };
-
+  //Cancelar
   const handleCancelSubmit = () => {
     setOpenModal(false);
   };
-
+  //Registar el ingreso del usuario
   const handleChange = (event) => {
     setNewTodoValue(event.target.value);
   };

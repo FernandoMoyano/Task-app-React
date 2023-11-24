@@ -36,8 +36,19 @@ const TodoProvider = ({ children }) => {
     /* Guardamos cambios en localStorage */
     saveTodos(newTodos);
   };
+  /* Agregar todo */
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({
+      text,
+      completed: false,
+    });
 
-  /* Eliminar tarea */
+    /* Guardamos cambios en localStorage */
+    saveTodos(newTodos);
+  };
+
+  /* Eliminar todo */
   const handleDelete = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text == text);
@@ -50,6 +61,7 @@ const TodoProvider = ({ children }) => {
   const handleModal = () => {
     setOpenModal(!openModal);
   };
+
   return (
     <TodoContext.Provider
       value={{
@@ -65,6 +77,7 @@ const TodoProvider = ({ children }) => {
         openModal,
         setOpenModal,
         handleModal,
+        addTodo,
       }}
     >
       {children}
