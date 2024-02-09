@@ -52,7 +52,7 @@ textarea:focus {
   cursor: pointer;
   display: inline-block;
   font-size: 20px;
-  color: #202329;
+  color: white;
   font-weight: 400;
   width: 120px;
   height: 48px;
@@ -62,10 +62,10 @@ textarea:focus {
 }
 
 .todoForm-button--add {
-  background: #61DAFA;
+  background: #026412;
   box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
 }
 
 .todoForm-button--cancel {
-  background: transparent;
+  background:#c01532
 }

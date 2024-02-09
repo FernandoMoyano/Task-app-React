@@ -1,8 +1,6 @@
-import "./EmptyTodos.css"
+import './EmptyTodos.css'
 const EmptyTodos = () => {
-  return (
-    <p>Crea tu primer Todo</p>
-  )
+  return <p>Crea tu primer Todo</p>
 }
 
 export default EmptyTodos

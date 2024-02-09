@@ -1,21 +1,18 @@
-import { useContext } from "react";
-import "./TodoSearch.css";
-import { TodoContext } from "../../context/TodoContext";
+import './TodoSearch.css'
 // eslint-disable-next-line react/prop-types
-const TodoSearch = () => {
-  const { searchValue, setSearchValue } = useContext(TodoContext);
+const TodoSearch = ({ searchValue, setSearchValue }) => {
   return (
     <>
       <input
-        className="todoSearch"
-        placeholder="Escribe aquí tu tarea"
+        className='todoSearch'
+        placeholder='Escribe aquí tu tarea'
         value={searchValue}
         onChange={(event) => {
-          setSearchValue(event.target.value);
+          setSearchValue(event.target.value)
         }}
       />
     </>
-  );
-};
+  )
+}
 
-export default TodoSearch;
+export default TodoSearch

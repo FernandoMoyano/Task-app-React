@@ -1,10 +1,10 @@
-import "./TodosLoading.css";
+import './TodosLoading.css'
 const TodosLoading = () => {
   return (
-    <div className="container">
-      <span className="loader"></span>
+    <div className='container'>
+      <span className='loader'></span>
     </div>
-  );
-};
+  )
+}
 
-export default TodosLoading;
+export default TodosLoading

@@ -1,38 +1,38 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
 const useLocalStorage = (itemName, initialValue) => {
-  const [item, setItem] = useState(initialValue);
+  const [item, setItem] = useState(initialValue)
 
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
       try {
         /* Local storage */
-        const localStorageItem = localStorage.getItem(itemName);
-        let parsedItem;
+        const localStorageItem = localStorage.getItem(itemName)
+        let parsedItem
 
         if (!localStorageItem) {
-          localStorage.setItem("TODOS_V1", JSON.stringify(initialValue));
-          parsedItem = initialValue;
+          localStorage.setItem('TODOS_V1', JSON.stringify(initialValue))
+          parsedItem = initialValue
         } else {
-          parsedItem = JSON.parse(localStorageItem);
-          setItem(parsedItem);
+          parsedItem = JSON.parse(localStorageItem)
+          setItem(parsedItem)
         }
-        setLoading(false);
+        setLoading(false)
       } catch (error) {
-        setError(error);
+        setError(error)
       }
-    }, 2000);
-  },[itemName,initialValue]);
+    }, 2000)
+  }, [itemName, initialValue])
 
   const saveItem = (newItem) => {
-    localStorage.setItem("TODOS_V1", JSON.stringify(newItem));
-    setItem(newItem);
-  };
+    localStorage.setItem('TODOS_V1', JSON.stringify(newItem))
+    setItem(newItem)
+  }
 
-  return { item, saveItem, loading, error };
-};
+  return { item, saveItem, loading, error }
+}
 
-export default useLocalStorage;
+export default useLocalStorage

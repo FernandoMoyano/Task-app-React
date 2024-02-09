@@ -1,14 +1,15 @@
-import "./createTodoButton.css";
-import { TodoContext } from "../../context/TodoContext";
-import { useContext } from "react";
+/* eslint-disable react/prop-types */
+import './createTodoButton.css'
 
-const CreateTodoButton = () => {
-  const { handleModal } = useContext(TodoContext);
+const CreateTodoButton = (props) => {
+  const onClickButton = () => {
+    props.setOpenModal((prevState) => !prevState)
+  }
   return (
-    <button className="createTodoButton" onClick={() => handleModal()}>
-       +
+    <button className='createTodoButton' onClick={onClickButton}>
+      +
     </button>
-  );
-};
+  )
+}
 
-export default CreateTodoButton;
+export default CreateTodoButton

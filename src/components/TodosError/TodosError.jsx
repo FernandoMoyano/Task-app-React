@@ -1,8 +1,6 @@
-import "./TodosError.css"
+import './TodosError.css'
 const TodosError = () => {
-  return (
-    <p>Hubo un error</p>
-  )
+  return <p>Hubo un error</p>
 }
 
 export default TodosError
